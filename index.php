@@ -178,14 +178,14 @@ class ZohoMailer
 try {
     // Initialize Zoho mailer
     $zoho = new ZohoMailer(
-        'mr_sandip@zohomail.in',
-        '2gWwGupWfStQ',  // Replace with your App Password if 2FA is enabled
+        'YOUR_FULL_EMAIL@zohomail.in',
+        'YOUR_PASSWORD',  // Replace with your App Password if 2FA is enabled
         true  // Enable debug (set to false in production)
     );
 
     // Example email
-    $zoho->setFrom('mr_sandip@zohomail.in', 'Test Sender')
-        ->addTo('onsiplapp@gmail.com', 'Test Receiver')
+    $zoho->setFrom('YOUR_FULL_EMAIL@zohomail.in', 'Test Sender')
+        ->addTo('RECIPIENT_EMAIL@zohomail.com', 'Test Receiver')
         ->setSubject('Zoho SMTP Test')
         ->setBody('If you see this, Zoho SMTP works.')
         ->send();
