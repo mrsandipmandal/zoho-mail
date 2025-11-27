@@ -24,8 +24,8 @@ A clean, reusable PHP class wrapper for sending emails via Zoho Mail SMTP using 
 ### Step 1: Clone or Download
 
 ```bash
-git clone https://github.com/yourusername/zoho-mail-phpmailer.git
-cd zoho-mail-phpmailer
+git clone https://github.com/mrsandipmandal/zoho-mail.git
+cd zoho-mail
 ```
 
 ### Step 2: Install Dependencies
