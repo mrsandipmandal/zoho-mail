@@ -7,7 +7,7 @@ use PHPMailer\PHPMailer\Exception;
 
 // Example usage (commented). Replace credentials and uncomment to test.
 
-try {
+/* try {
     $zoho = new ZohoMail(
         'YourZohoMail@zohomail.in',
         'YourZohoPassword',  // Replace with your App Password if 2FA is enabled
@@ -24,7 +24,7 @@ try {
     echo "✓ Email sent successfully!\n";
 } catch (Exception $e) {
     echo "✗ Error: " . $e->getMessage() . "\n";
-}
+} */
 
 
 // If you want programmatic usage, create an instance of ZohoMail from \ZohoMail\ZohoMail
