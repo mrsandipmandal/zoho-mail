@@ -190,27 +190,6 @@ new ZohoMailer($username, $password, $debug = false)
 | `getError()` | Get last error message | `string` |
 | `getMailer()` | Get PHPMailer instance (advanced) | `PHPMailer` |
 
-## Project Structure
-
-```
-zoho-mail-phpmailer/
-├── index.php                  # ZohoMailer class definition
-├── composer.json              # Composer dependencies
-├── composer.lock              # Locked dependency versions
-├── README.md                  # This file
-├── vendor/                    # PHPMailer and dependencies
-│   ├── phpmailer/
-│   │   └── phpmailer/
-│   │       ├── src/
-│   │       ├── language/
-│   │       └── ...
-│   └── ...
-└── templates/                 # (Optional) Email templates
-    ├── welcome.html
-    ├── invoice.html
-    └── ...
-```
-
 ## Troubleshooting
 
 ### 535 Authentication Failed
