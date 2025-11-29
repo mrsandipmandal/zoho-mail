@@ -38,13 +38,20 @@ This will install PHPMailer 7.0+ from Composer.
 
 ### Step 3: Configure Credentials
 
-Open `index.php` and update your Zoho Mail credentials:
+Provide credentials when you instantiate the `ZohoMail` class (do not edit package files).
+
+You can pass credentials directly to the constructor or load them from environment variables. Example:
 
 ```php
+// prefer using Composer autoload and environment variables
+require 'vendor/autoload.php';
+
+use ZohoMail\ZohoMail;
+
 $zoho = new ZohoMail(
     'your-email@zohomail.in',      // Your Zoho Mail address
-    'your-app-password',            // Your Zoho password or App Password
-    true                            // Debug mode (true for development, false for production)
+    'your-app-password',           // Your Zoho password or App Password
+    true                           // Debug mode (true for development, false for production)
 );
 ```
 
@@ -71,34 +78,36 @@ If your Zoho account **has 2FA enabled**, you must create an App Password:
 ```php
 <?php
 require 'vendor/autoload.php';
-include 'index.php'; // ZohoMail class
+
+use ZohoMail\ZohoMail;
+use PHPMailer\PHPMailer\Exception;
 
 try {
-    $zoho = new ZohoMail('your-email@zohomail.in', 'your-password', false);
-    
+    // Construct with (username, password/app-password, debug)
+    $zoho = new ZohoMail('your-email@zohomail.in', 'your-app-password', false);
+
     $zoho->setFrom('your-email@zohomail.in', 'Your Name')
          ->addTo('recipient@example.com', 'Recipient Name')
          ->setSubject('Hello!')
-         ->setBody('This is a test email.')
+         ->setBody('This is a test email.', true) // second param is isHTML (default true)
          ->send();
 
     echo "✓ Email sent successfully!";
 } catch (Exception $e) {
     echo "✗ Error: " . $e->getMessage();
 }
-?>
 ```
 
 ### Email with Attachments
 
 ```php
 $zoho->setFrom('your-email@zohomail.in', 'Sender')
-     ->addTo('recipient@example.com')
-     ->setSubject('Invoice')
-     ->setBody('Please see the attached invoice.')
-     ->attachFile('/path/to/invoice.pdf', 'invoice.pdf')
-     ->attachFile('/path/to/receipt.txt', 'receipt.txt')
-     ->send();
+    ->addTo('recipient@example.com')
+    ->setSubject('Invoice')
+    ->setBody('Please see the attached invoice.', false) // plain text body
+    ->attachFile('/path/to/invoice.pdf', 'invoice.pdf')
+    ->attachFile('/path/to/receipt.txt', 'receipt.txt')
+    ->send();
 ```
 
 ### Email with Templates
