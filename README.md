@@ -41,7 +41,7 @@ This will install PHPMailer 7.0+ from Composer.
 Open `index.php` and update your Zoho Mail credentials:
 
 ```php
-$zoho = new ZohoMailer(
+$zoho = new ZohoMail(
     'your-email@zohomail.in',      // Your Zoho Mail address
     'your-app-password',            // Your Zoho password or App Password
     true                            // Debug mode (true for development, false for production)
@@ -71,10 +71,10 @@ If your Zoho account **has 2FA enabled**, you must create an App Password:
 ```php
 <?php
 require 'vendor/autoload.php';
-include 'index.php'; // ZohoMailer class
+include 'index.php'; // ZohoMail class
 
 try {
-    $zoho = new ZohoMailer('your-email@zohomail.in', 'your-password', false);
+    $zoho = new ZohoMail('your-email@zohomail.in', 'your-password', false);
     
     $zoho->setFrom('your-email@zohomail.in', 'Your Name')
          ->addTo('recipient@example.com', 'Recipient Name')
@@ -149,12 +149,12 @@ $zoho->setFrom('your-email@zohomail.in', 'Sender')
      ->send();
 ```
 
-## ZohoMailer Class Reference
+## ZohoMail Class Reference
 
 ### Constructor
 
 ```php
-new ZohoMailer($username, $password, $debug = false)
+new ZohoMail($username, $password, $debug = false)
 ```
 
 - `$username` (string) — Zoho Mail email address
@@ -247,7 +247,7 @@ attachTemplate('path/to/template.html', [
 
 ## Configuration Details
 
-The class is pre-configured for **Zoho Mail India region** (`smtp.zoho.in`). If you use a different region, edit the `$config` array in the `ZohoMailer` constructor:
+The class is pre-configured for **Zoho Mail India region** (`smtp.zoho.in`). If you use a different region, edit the `$config` array in the `ZohoMail` constructor:
 
 ```php
 // US region example
@@ -270,7 +270,7 @@ $this->config = [
 Enable debug output during development by setting the third parameter to `true`:
 
 ```php
-$zoho = new ZohoMailer('email@zohomail.in', 'password', true);
+$zoho = new ZohoMail('email@zohomail.in', 'password', true);
 ```
 
 This will display detailed SMTP server communication. **Disable for production** (`false`) to avoid exposing sensitive information.
@@ -279,7 +279,7 @@ This will display detailed SMTP server communication. **Disable for production**
 
 1. **Never hardcode credentials** in production. Use environment variables:
    ```php
-   $zoho = new ZohoMailer(
+   $zoho = new ZohoMail(
        $_ENV['ZOHO_EMAIL'],
        $_ENV['ZOHO_PASSWORD'],
        $_ENV['ZOHO_DEBUG'] ?? false
@@ -337,7 +337,7 @@ $dotenv->load();
 
 include 'index.php';
 
-$zoho = new ZohoMailer($_ENV['ZOHO_EMAIL'], $_ENV['ZOHO_PASSWORD'], $_ENV['ZOHO_DEBUG']);
+$zoho = new ZohoMail($_ENV['ZOHO_EMAIL'], $_ENV['ZOHO_PASSWORD'], $_ENV['ZOHO_DEBUG']);
 ```
 
 (Install `vlucas/phpdotenv` via Composer for `.env` support)
@@ -366,7 +366,7 @@ This project is licensed under the MIT License. See LICENSE file for details.
 
 ### v1.0.0 (2025-11-27)
 - Initial release
-- ZohoMailer class with fluent interface
+- ZohoMail class with fluent interface
 - Support for Zoho Mail (India region)
 - File attachments and template support
 - Multiple recipient handling
