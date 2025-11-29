@@ -80,7 +80,6 @@ If your Zoho account **has 2FA enabled**, you must create an App Password:
 require 'vendor/autoload.php';
 
 use ZohoMail\ZohoMail;
-use PHPMailer\PHPMailer\Exception;
 
 try {
     // Construct with (username, password/app-password, debug)
