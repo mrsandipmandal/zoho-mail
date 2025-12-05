@@ -36,6 +36,41 @@ composer install
 
 This will install PHPMailer 7.0+ from Composer.
 
+### Install via Composer (recommended)
+
+If you published the package to Packagist, install it into your project with Composer:
+
+```bash
+# stable release (preferred)
+composer require php-zoho-mail/zoho-mail
+
+```
+
+If Packagist shows only a dev branch (no stable tag), require the dev branch explicitly:
+
+```bash
+composer require php-zoho-mail/zoho-mail:dev-master
+# or use dev-main if your default branch is main
+composer require php-zoho-mail/zoho-mail:dev-main
+```
+
+If you get a "minimum-stability" error, either add an explicit dev constraint (as above) or allow dev stability in your project's `composer.json`:
+
+```json
+{
+    "minimum-stability": "dev",
+    "prefer-stable": true
+}
+```
+
+Recommendation: publish a stable tag (e.g., `v1.0.0`) in your package repository and update Packagist — then projects can require the package without dev constraints:
+
+```bash
+# in your package repo
+# git tag -a v1.0.0 -m "v1.0.0"
+# git push origin v1.0.0
+```
+
 ### Step 3: Configure Credentials
 
 Provide credentials when you instantiate the `ZohoMail` class (do not edit package files).
