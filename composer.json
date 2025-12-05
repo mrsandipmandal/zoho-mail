@@ -1,5 +1,5 @@
 {
-    "name": "mrsandipmandal/zoho-mail",
+    "name": "php/zoho-mail",
     "description": "A lightweight PHP wrapper for sending mail via Zoho using PHPMailer",
     "type": "library",
     "license": "MIT",
