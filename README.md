@@ -1,5 +1,11 @@
 # Zoho Mail SMTP PHPMailer
 
+
+[![Latest Version on Packagist](https://img.shields.io/packagist/v/open-php/zoho-mail.svg?style=flat-square)](https://packagist.org/packages/open-php/zoho-mail)
+[![Total Downloads](https://img.shields.io/packagist/dt/open-php/zoho-mail.svg?style=flat-square)](https://packagist.org/packages/open-php/zoho-mail)
+[![License](https://img.shields.io/packagist/l/open-php/zoho-mail.svg?style=flat-square)](https://packagist.org/packages/open-php/zoho-mail)
+
+
 A clean, reusable PHP class wrapper for sending emails via Zoho Mail SMTP using PHPMailer. Perfect for applications requiring reliable email delivery with support for attachments, templates, and multiple recipients.
 
 ## Features
@@ -42,16 +48,16 @@ If you published the package to Packagist, install it into your project with Com
 
 ```bash
 # stable release (preferred)
-composer require php-zoho-mail/zoho-mail
+composer require open-php/zoho-mail
 
 ```
 
 If Packagist shows only a dev branch (no stable tag), require the dev branch explicitly:
 
 ```bash
-composer require php-zoho-mail/zoho-mail:dev-master
+composer require open-php/zoho-mail:dev-master
 # or use dev-main if your default branch is main
-composer require php-zoho-mail/zoho-mail:dev-main
+composer require open-php/zoho-mail:dev-main
 ```
 
 If you get a "minimum-stability" error, either add an explicit dev constraint (as above) or allow dev stability in your project's `composer.json`:

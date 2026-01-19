@@ -1,8 +1,19 @@
 {
-    "name": "php-zoho-mail/zoho-mail",
+    "name": "open-php/zoho-mail",
     "description": "A lightweight PHP wrapper for sending mail via Zoho using PHPMailer",
     "type": "library",
     "license": "MIT",
+    "homepage": "https://github.com/mrsandipmandal/zoho-mail",
+    "support": {
+        "issues": "https://github.com/mrsandipmandal/zoho-mail/issues",
+        "source": "https://github.com/mrsandipmandal/zoho-mail"
+    },
+    "keywords": [
+        "zoho",
+        "mail",
+        "php",
+        "smtp"
+    ],
     "authors": [
         {
             "name": "Sandip Mandal",
@@ -20,11 +31,5 @@
         }
     },
     "minimum-stability": "stable",
-    "prefer-stable": true,
-    "keywords": ["zoho","mail","php","smtp"],
-    "homepage": "https://github.com/mrsandipmandal/zoho-mail",
-    "support": {
-        "issues": "https://github.com/mrsandipmandal/zoho-mail/issues",
-        "source": "https://github.com/mrsandipmandal/zoho-mail"
-    }
+    "prefer-stable": true
 }
